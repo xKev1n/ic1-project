@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <time.h>
 #include <unistd.h>
+#include <pthread.h>
 
-int main(int argc, char const *argv[])
+void *startTimer(void *vargp)
 {
 	int end = 300;
 	int mins = end / 60;
@@ -20,7 +21,7 @@ int main(int argc, char const *argv[])
 			printf("%i:%i\n", mins, secs);
 		}
 		
-		if (end % 60 == 0)
+		if (secs == 0)
 		{
 			mins --;
 		}
@@ -28,5 +29,16 @@ int main(int argc, char const *argv[])
 		sleep(1);
 	}
 
+	return NULL;
+}
+
+int main(int argc, char const *argv[])
+{
+
+	pthread_t thread_id;
+
+	pthread_create(&thread_id, NULL, startTimer, NULL);
+	pthread_join(thread_id, NULL);
+	
 	return 0;
 }
