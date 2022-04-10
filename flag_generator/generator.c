@@ -16,7 +16,7 @@ static char *rand_flag(char *str, size_t size)
 	}
 	return str;
 }
-
+/*
 int main(int argc, char const *argv[])
 {
 	time_t t;
@@ -33,3 +33,4 @@ int main(int argc, char const *argv[])
 
 	return 0;
 }
+*/
