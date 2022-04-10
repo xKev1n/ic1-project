@@ -9,7 +9,7 @@ There are several vulnerabilities which you have to exploit to get the necessary
 
 To make it easier for everyone, we decided to include hints, that will help you with your task.
 
-:warning: <b> WARNING, USE THIS PROJECT ONLY IN VIRTUALIZED ENVIROMENT AND ONLY FOR EDUCATIONAL PURPOSES !!!! </b> :warning: </font>
+:warning: <b> WARNING, USE THIS PROJECT ONLY IN VIRTUALIZED ENVIRONMENT AND ONLY FOR EDUCATIONAL PURPOSES !!!! </b> :warning: </font>
 
 ## Description
 Make your own Linux virtual machine and clone this repository via HTTPS or SSH.
