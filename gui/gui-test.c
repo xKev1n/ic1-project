@@ -68,9 +68,9 @@ int main(int argc, char* argv[])
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), "Let's play a game...");
     gtk_window_set_default_size(GTK_WINDOW(window), 1200, 800);
-    gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
+    //gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
     gtk_window_set_resizable(GTK_WINDOW(window), FALSE);
-    gtk_widget_override_background_color(window, GTK_STATE_NORMAL, &color);
+    //gtk_widget_override_background_color(window, GTK_STATE_NORMAL, &color);
     gtk_window_set_decorated(GTK_WINDOW(window), FALSE);
 
     vbox = gtk_vbox_new(FALSE, 2);

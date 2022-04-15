@@ -121,7 +121,7 @@ int main(int argc, char *argv[]){
     gtk_table_attach(GTK_TABLE(table), thirdFlagLabel, 0, 1, 2, 3, GTK_FILL, GTK_FILL, 4, 4);
     gtk_table_attach(GTK_TABLE(table), thirdFlagEntry, 1, 2, 2, 3, GTK_FILL, GTK_FILL, 4, 4);
     gtk_table_attach(GTK_TABLE(table), thirdSubmitButton, 2, 3, 2, 3, GTK_FILL, GTK_FILL, 4, 4);
-    gtk_table_attach(GTK_WIDGET(table), allSubmitButton, 1, 2, 3, 4, GTK_FILL, GTK_FILL, 4, 4);
+    gtk_table_attach(GTK_TABLE(table), allSubmitButton, 1, 2, 3, 4, GTK_FILL, GTK_FILL, 4, 4);
 
     gtk_widget_show_all(window);
 
