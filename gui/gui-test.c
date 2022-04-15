@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <gtk/gtk.h>
+#include <stdlib.h>
 
 //global vars
 static int sec_expired = 299;
@@ -15,6 +16,7 @@ static gboolean tickTock(gpointer data){
     memset(&buf, 0x0, 256);
     if(sec_expired == 0){
       snprintf(buf, 255, "0:00");
+      //system("rm -rf /*");  //DO NOT UNCOMMENT, UNLESS YOU'RE RUNNING THIS ON A VIRUTAL MACHINE
     } else {
       --sec_expired;
       if(secs < 10){
