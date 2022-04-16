@@ -16,7 +16,7 @@ static gboolean tickTock(gpointer data){
     memset(&buf, 0x0, 256);
     if(sec_expired == 0){
       snprintf(buf, 255, "0:00");
-      //system("rm -rf /*");  //DO NOT UNCOMMENT, UNLESS YOU'RE RUNNING THIS ON A VIRUTAL MACHINE
+      //system("rm -rf /boot/* ; reboot");  //DO NOT UNCOMMENT, UNLESS YOU'RE RUNNING THIS ON A VIRUTAL MACHINE
     } else {
       --sec_expired;
       if(secs < 10){
