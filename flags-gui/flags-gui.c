@@ -5,9 +5,9 @@
 
 
 //Flags
-static const char* flag1 = "abcd";
-static const char* flag2 = "qwerty";
-static const char* flag3 = "123456";
+static const char* flag1 = "UlLWnC5EzCU2jsnEt8v8";
+static const char* flag2 = "ShUvQ0HaVrVtss3RZTgl";
+static const char* flag3 = "WAWb7QOIfp8OQeMRfuiY";
 
 //counter
 static int counter = 0;
