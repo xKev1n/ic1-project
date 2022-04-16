@@ -59,7 +59,7 @@ static void checkThirdFlag(GtkWidget *widget, gpointer data){
 
 static void ctrCheck(GtkWidget *widget, gpointer data){
   if(counter == 3){
-    system("kill `pgrep -u miggs gui-test`");
+    system("kill `pgrep gui-test`");
   }
 }
 
