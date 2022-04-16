@@ -75,14 +75,14 @@ int main(int argc, char* argv[])
     gtk_window_set_default_size(GTK_WINDOW(window), 1200, 800);
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
     gtk_window_set_resizable(GTK_WINDOW(window), FALSE);
-    gtk_widget_override_background_color(window, GTK_STATE_NORMAL, &color);
+    //gtk_widget_override_background_color(window, GTK_STATE_NORMAL, &color);
     gtk_window_set_decorated(GTK_WINDOW(window), FALSE);
 
     vbox = gtk_vbox_new(FALSE, 2);
     gtk_container_add(GTK_CONTAINER(window), vbox);
     //g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
 
-    image = gtk_image_new_from_file("resources/images/hacked.png");
+    image = gtk_image_new_from_file("/home/player/.scripts/resources/images/hacked.png");
 
     timerLabel = gtk_label_new("10:00");
     gtk_label_set_attributes(GTK_LABEL(timerLabel), attrList);
