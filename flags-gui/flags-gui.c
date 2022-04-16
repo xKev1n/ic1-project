@@ -59,7 +59,7 @@ static void checkThirdFlag(GtkWidget *widget, gpointer data){
 
 static void ctrCheck(GtkWidget *widget, gpointer data){
   if(counter == 3){
-    system("kill `pgrep gui-test`");
+    system("kill `pgrep -u miggs gui-test`");
   }
 }
 
@@ -81,6 +81,7 @@ int main(int argc, char *argv[]){
     GtkWidget *thirdFlagEntry;
     GtkWidget *thirdSubmitButton;
     GtkWidget *allSubmitButton;
+    GtkWidget *warningLabel;
 
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), "Flags");
@@ -95,6 +96,7 @@ int main(int argc, char *argv[]){
     firstFlagLabel = gtk_label_new("Flag 1");
     secondFlagLabel = gtk_label_new("Flag 2");
     thirdFlagLabel = gtk_label_new("Flag 3");
+    warningLabel = gtk_label_new("DO NOT CLOSE THIS WINDOW, it cannot be opened again");
 
     firstFlagEntry = gtk_entry_new();
     gtk_entry_set_placeholder_text(GTK_ENTRY(firstFlagEntry), "Flag 1");
@@ -122,6 +124,7 @@ int main(int argc, char *argv[]){
     gtk_table_attach(GTK_TABLE(table), thirdFlagEntry, 1, 2, 2, 3, GTK_FILL, GTK_FILL, 4, 4);
     gtk_table_attach(GTK_TABLE(table), thirdSubmitButton, 2, 3, 2, 3, GTK_FILL, GTK_FILL, 4, 4);
     gtk_table_attach(GTK_TABLE(table), allSubmitButton, 1, 2, 3, 4, GTK_FILL, GTK_FILL, 4, 4);
+    gtk_table_attach(GTK_TABLE(table), warningLabel, 1, 2, 4, 5, GTK_FILL, GTK_FILL, 4, 4);
 
     gtk_widget_show_all(window);
 

