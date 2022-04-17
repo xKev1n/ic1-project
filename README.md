@@ -7,6 +7,8 @@ The project in form of interactive game, in which you have to find hidden flags 
 
 There are several vulnerabilities which you have to exploit to get the necessary flags.
 
+Those vulerabilities are represented by 4 pre-compiled C terminal apps. You can find them on the desktop in directories named "level<1-4>".
+
 To make it easier for everyone, we decided to include hints, that will help you with your task.
 
 :warning: <b> WARNING, USE THIS PROJECT ONLY IN VIRTUALIZED ENVIRONMENT AND ONLY FOR EDUCATIONAL PURPOSES !!!! </b> :warning: </font>
@@ -14,30 +16,38 @@ To make it easier for everyone, we decided to include hints, that will help you 
 There are hidden "easter eggs" and "secret endings" to add more fun and diversity of possible "escapes".
 
 ## Description
-Make your own Linux virtual machine and clone this repository via HTTPS or SSH.
+Clone this repository via HTTPS or SSH. There will be .ova file containing pre-configured Virtual Machine.
+After starting the Virtual Machine, you need to log in by `Player` account.
+The credentials are as follows:
+<h6>Username: player</h3>
+<h6>Password: startgame</h3>
 
-<b> HTTPS </b>
+<h3> HTTPS </h3>
 ```shell
 $ git clone https://github.com/xKev1n/ic1-project.git
 ```
 
-<b> SSH </b>
+<h3> SSH </h3>
 ```shell
 $ git clone git@github.com:xKev1n/ic1-project.git
 ```
+For the project to work to set up your Virtual Machine and <b>disable Linux protection</b> against buffer overflow. That is done by running shell script `turn_off_sec.sh` with <b>root privileges</b>. That is already done in the included Virtual Machine.
 
-For the project to work you need to <b>disable Linux protection</b> against buffer overflow. That is done by running shell script `turn_off_sec.sh` with <b>root privileges</b>.
+```shell
+$ sudo bash turn_off_sec.sh
+```
 
-After successfully cloning the repository and running the mentined script, the app will start itself automatically after rebooting.
+After successfully cloning the repository (and running the mentioned script), the app will start itself automatically after rebooting.
 
 There are 4 hidden flags that you have to obtain in a time interval of 10 minutes for the program to end.
 
-If you don't manage to get all flags, the program will <b>wipe out your boot directory</b>:bangbang:
+If you don't manage to get all flags, the program will <b>wipe out the boot directory</b>:bangbang:
 
 ## Requirements
 - Linux virtual machine with x86_64 architecture
 - Installed gcc
-- Installed python 
+- Installed python
+- Installed gtk
 
 ## Optional
 - Installed GDB is highly suggested
@@ -52,8 +62,9 @@ $ make
 ```
 
 ## Run the project
-To run the compiled project:
+To run the precompiled exploitable apps:
 ```shell
-$ ./<whatever>
+$ cd ~/Desktop/level<1-4>
+$ ./exploitable_level<1-4>
 ```
 <h2>:video_game:So let the games begin! HAVE FUN ESCAPING! :video_game:</h2>
