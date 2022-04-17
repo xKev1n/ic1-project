@@ -19,15 +19,18 @@ There are hidden "easter eggs" and "secret endings" to add more fun and diversit
 Clone this repository via HTTPS or SSH. There will be .ova file containing pre-configured Virtual Machine.
 After starting the Virtual Machine, you need to log in by `Player` account.
 The credentials are as follows:
+
 <h6>Username: player</h3>
 <h6>Password: startgame</h3>
 
 <h3> HTTPS </h3>
+
 ```shell
 $ git clone https://github.com/xKev1n/ic1-project.git
 ```
 
 <h3> SSH </h3>
+
 ```shell
 $ git clone git@github.com:xKev1n/ic1-project.git
 ```
