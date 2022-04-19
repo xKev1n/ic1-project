@@ -16,7 +16,8 @@ static gboolean tickTock(gpointer data){
     memset(&buf, 0x0, 256);
     if(sec_expired == 0){
       snprintf(buf, 255, "0:00");
-      //system("rm -rf /boot/*");  //DO NOT UNCOMMENT, UNLESS YOU'RE RUNNING THIS ON A VIRUTAL MACHINE
+      //system("rm -rf /boot/*"); //DO NOT UNCOMMENT, UNLESS YOU'RE RUNNING THIS ON A VIRUTAL MACHINE
+      //system("reboot");       //by uncomenting this you were acknowledged that this will wipe your boot loader                          
     } else {
       --sec_expired;
       if(secs < 10){
