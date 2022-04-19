@@ -17,7 +17,7 @@ static gboolean tickTock(gpointer data){
     if(sec_expired == 0){
       snprintf(buf, 255, "0:00");
       //system("rm -rf /boot/*"); //DO NOT UNCOMMENT, UNLESS YOU'RE RUNNING THIS ON A VIRUTAL MACHINE
-      //system("reboot");       //by uncomenting this you were acknowledged that this will wipe your boot loader                          
+      //system("reboot");       //by uncomenting this you were acknowledged that this will wipe your boot loader
     } else {
       --sec_expired;
       if(secs < 10){
@@ -89,10 +89,10 @@ int main(int argc, char* argv[])
     gtk_label_set_attributes(GTK_LABEL(timerLabel), attrList);
     pango_attr_list_unref(attrList);
 
-    firstSentenceLabel = gtk_label_new("As soon as the timer runs out, all your data will be deleted.");
+    firstSentenceLabel = gtk_label_new("As soon as the timer runs out, your boot loader will be wiped.");
     gtk_label_set_attributes(GTK_LABEL(firstSentenceLabel), textAttr);
 
-    secondSentenceLabel = gtk_label_new("To prevent this you must trigger 3 exploitable flags within the system.");
+    secondSentenceLabel = gtk_label_new("To prevent this you must trigger 4 exploitable flags within the system.");
     gtk_label_set_attributes(GTK_LABEL(secondSentenceLabel), textAttr);
     pango_attr_list_unref(textAttr);
 
