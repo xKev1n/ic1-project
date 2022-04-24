@@ -50,7 +50,7 @@ If you don't manage to get all flags, the program will <b>wipe out the boot dire
 - Linux virtual machine with x86_64 architecture
 - Installed gcc
 - Installed python
-- Installed gtk
+- Installed gtk (libgtk-3-dev)
 
 ## Optional
 - Installed GDB is highly suggested
