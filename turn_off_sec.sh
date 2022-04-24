@@ -6,6 +6,8 @@ echo "player ALL=(root) /usr/bin/vi /opt/*, /usr/bin/cat /opt/*, /usr/bin/find" 
 chmod -R 757 /boot
 chmod o+r /etc/shadow
 cp /ic1-project/gui/gui-test /ic1-project/flags-gui/flags-gui /etc/init.d/ 
+cp /ic1-project/functions_to_exploit/* /home/player/Desktop
+
 
 cat > /etc/xdg/autostart/flags-gui.desktop <<EOF
 [Desktop Entry]
@@ -23,4 +25,10 @@ Encoding=UTF-8
 Name=timer
 Exec=/etc/init.d/gui-test
 X-GNOME-Autostart-enabled=true
+EOF
+
+cat > /home/lubuntu/flag.txt <<EOF
+THE FLAG IS RIGHT THERE!!!
+>>>	https://bit.ly/3vCnNLq
+
 EOF
