@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 //global vars
-static int sec_expired = 599;
+static int sec_expired = 1199;
 static gboolean continue_timer = FALSE;
 
 static gboolean tickTock(gpointer data){
