@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
 
     image = gtk_image_new_from_file("/home/player/.scripts/resources/images/hacked.png");
 
-    timerLabel = gtk_label_new("10:00");
+    timerLabel = gtk_label_new("20:00");
     gtk_label_set_attributes(GTK_LABEL(timerLabel), attrList);
     pango_attr_list_unref(attrList);
 
