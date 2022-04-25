@@ -16,7 +16,7 @@ To make it easier for everyone, we decided to include hints, that will help you 
 There are hidden "easter eggs" and "secret endings" to add more fun and diversity of possible "escapes".
 
 ## Description
-Clone this repository via HTTPS or SSH. There will be .ova file containing pre-configured Virtual Machine.
+Clone this repository via HTTPS or SSH.
 After starting the Virtual Machine, you need to log in by `Player` account.
 The credentials are as follows:
 
@@ -34,7 +34,7 @@ $ git clone https://github.com/xKev1n/ic1-project.git
 ```shell
 $ git clone git@github.com:xKev1n/ic1-project.git
 ```
-For the project to work to set up your Virtual Machine and <b>disable Linux protection</b> against buffer overflow. That is done by running shell script `turn_off_sec.sh` with <b>root privileges</b>. That is already done in the included Virtual Machine.
+For the project to work to set up your Virtual Machine and <b>disable Linux protection</b> against buffer overflow. That is done by running shell script `turn_off_sec.sh` with <b>root privileges</b>.
 
 ```shell
 $ sudo bash turn_off_sec.sh
@@ -43,6 +43,8 @@ $ sudo bash turn_off_sec.sh
 After successfully cloning the repository (and running the mentioned script), the app will start itself automatically after rebooting.
 
 There are 4 hidden flags that you have to obtain in a time interval of 10 minutes for the program to end.
+
+Player should not be provided source codes hence there are flags hardcoded in it. You can provide source codes with blank flag functions if you want.
 
 If you don't manage to get all flags, the program will <b>wipe out the boot directory</b>:bangbang:
 
