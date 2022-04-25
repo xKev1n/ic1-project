@@ -47,7 +47,8 @@ There are 4 hidden flags that you have to obtain in a time interval of 20 minute
 Player should not be provided source codes hence there are flags hardcoded in it. You can provide source codes with blank flag functions if you want.
 
 If you don't manage to obtain all flags, the program will <b>wipe out the boot directory</b>:bangbang:
-▶️You have to uncomment specific lines of code in gui source code and recompile it. Due to security reasons...
+
+▶️You have to uncomment specific lines of code in gui source code and recompile it to make this work. Due to security reasons...
 
 ## Requirements
 - Linux virtual machine with x86_64 architecture
